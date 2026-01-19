@@ -28,71 +28,224 @@
         }
     </script>
     <style>
-        .repo-card {
-            transition: all 0.3s ease;
-            border: 1px solid #e5e7eb;
+        /* Existing styles remain... */
+        
+        /* Work Experience Timeline Styles */
+        .timeline-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
-        .repo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #4F46E5, #10B981, transparent);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+            width: 100%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 20px);
+            padding-left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 20px);
+            padding-right: 0;
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.12);
             border-color: #4F46E5;
         }
         
-        .tech-tag {
-            padding: 2px 8px;
+        .timeline-date {
+            position: absolute;
+            top: 12px;
+            padding: 4px 10px;
             border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 500;
+            font-size: 10px;
+            font-weight: 600;
+            z-index: 3;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
-        .tech-html {
-            background-color: rgba(227, 76, 38, 0.1);
-            color: #e34c26;
-        }
-        
-        .tech-js {
-            background-color: rgba(247, 223, 30, 0.1);
-            color: #f7df1e;
-        }
-        
-        .tech-ts {
-            background-color: rgba(49, 120, 198, 0.1);
-            color: #3178c6;
-        }
-        
-        .tech-css {
-            background-color: rgba(21, 114, 182, 0.1);
-            color: #1572b6;
-        }
-        
-        .tech-php {
-            background-color: rgba(120, 119, 198, 0.1);
-            color: #7877c6;
-        }
-        
-        .tech-java {
-            background-color: rgba(178, 30, 30, 0.1);
-            color: #b21e1e;
-        }
-        
-        .repo-stats {
-            font-size: 0.75rem;
-            color: #6b7280;
-        }
-        
-        .github-icon {
-            background: linear-gradient(135deg, #333 0%, #24292e 100%);
-        }
-        
-        .filter-btn {
-            transition: all 0.2s ease;
-        }
-        
-        .filter-btn.active {
-            background-color: #4F46E5;
+        .timeline-item:nth-child(odd) .timeline-date {
+            right: 12px;
+            background: linear-gradient(135deg, #4F46E5, #6366F1);
             color: white;
         }
+        
+        .timeline-item:nth-child(even) .timeline-date {
+            left: 12px;
+            background: linear-gradient(135deg, #10B981, #34D399);
+            color: white;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 3px solid white;
+            z-index: 2;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -28px;
+            background: linear-gradient(135deg, #4F46E5, #6366F1);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -28px;
+            background: linear-gradient(135deg, #10B981, #34D399);
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-color: #4F46E5;
+        }
+        
+        .current-role-badge {
+            position: absolute;
+            top: -8px;
+            right: 16px;
+            background: linear-gradient(135deg, #4F46E5, #6366F1);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 16px;
+            font-size: 10px;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(79, 70, 229, 0.25);
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 1024px) {
+            .timeline-container::before {
+                left: 25px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px !important;
+                padding-right: 0 !important;
+                margin-bottom: 24px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+            }
+            
+            .timeline-date {
+                left: 12px !important;
+                right: auto !important;
+                top: 12px !important;
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+            
+            .timeline-dot {
+                left: 13px !important;
+                right: auto !important;
+                width: 14px;
+                height: 14px;
+            }
+            
+            .current-role-badge {
+                position: relative;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                margin-bottom: 12px;
+            }
+        }
+        
+        /* Skill bar animations */
+        .skill-bar {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .skill-bar-fill {
+            transition: width 1s ease-in-out;
+        }
+        
+        .skill-bar-fill.animate {
+            animation: skillFill 1s ease-out forwards;
+        }
+        
+        @keyframes skillFill {
+            from { width: 0; }
+            to { width: var(--skill-width); }
+        }
+        
+        /* Gradient text effect */
+        .gradient-text {
+            background: linear-gradient(135deg, #4F46E5, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Fade-in animations */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .stagger-delay-1 { animation-delay: 0.1s; }
+        .stagger-delay-2 { animation-delay: 0.2s; }
+        .stagger-delay-3 { animation-delay: 0.3s; }
+        .stagger-delay-4 { animation-delay: 0.4s; }
+        .stagger-delay-5 { animation-delay: 0.5s; }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -403,270 +556,621 @@
         </div>
     </section>
 
-    <!-- Work Experience Section -->
-    <section id="experience" class="py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark mb-3 sm:mb-4">Work Experience</h2>
-                <div class="w-20 h-1 bg-primary mx-auto"></div>
+    <!-- Work Experience Section - IMPROVED -->
+    <section id="experience" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-14">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                    <span class="text-sm font-medium text-primary uppercase tracking-wider">Professional Journey</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-dark mb-4">
+                    Work <span class="gradient-text">Experience</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A chronological journey through my professional career, highlighting key roles and achievements
+                </p>
             </div>
-            
-            <div class="space-y-6 sm:space-y-8">
-                <!-- Current Role -->
-                <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-dark">PSC Intern - ICT Section</h3>
-                            <p class="text-primary font-medium text-sm sm:text-base">State Department for Performance and Delivery Management</p>
+
+            <!-- Desktop Timeline View -->
+            <div class="hidden lg:block timeline-container">
+                <!-- Current Role - PSC Intern -->
+                <div class="timeline-item fade-in stagger-delay-1">
+                    <div class="timeline-content relative">
+                        <!-- <div class="current-role-badge">
+                            Current Role
+                        </div> -->
+                        <div class="timeline-date">April 2024 - April 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="flex items-start justify-between mb-3 pt-6">
+                            <div class="flex-1 pr-2">
+                                <h3 class="text-lg font-bold text-dark mb-1">PSC Intern - ICT Section</h3>
+                                <p class="text-primary font-medium text-sm">State Department for Performance and Delivery Management</p>
+                            </div>
+                            <div class="flex items-center gap-1.5 flex-shrink-0 ml-3">
+                                <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-lg text-xs font-medium">1 Year</span>
+                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded-lg text-xs font-medium">Full-time</span>
+                            </div>
                         </div>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary mt-2 sm:mt-0">
-                            April 2024 - April 2025
-                        </span>
+                        
+                        <div class="mb-3">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-feather="target" class="w-3.5 h-3.5 text-primary"></i>
+                                <span class="text-xs font-medium text-gray-700">Key Responsibilities</span>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Performed system backups, server builds, and recovery procedures</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Monitored software and servers for optimal performance</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Provided user support and conducted training sessions</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Assisted in systems implementation and documentation</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Supported Kenya Vision 2030 Delivery Secretariat initiatives</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100">
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">System Administration</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">User Support</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Technical Training</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Documentation</span>
+                        </div>
                     </div>
-                    <ul class="space-y-2 text-sm sm:text-base text-gray-600 list-disc list-inside">
-                        <li>Performed system backups, server builds, and recovery</li>
-                        <li>Monitored software and servers</li>
-                        <li>Provided user support and training</li>
-                        <li>Assisted in systems implementation and documentation</li>
-                        <li>Conducted safety checks and advised on IT upgrades</li>
-                        <li>Supported Kenya Vision 2030 Delivery Secretariat</li>
-                    </ul>
                 </div>
 
-                <!-- Previous Roles -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
-                        <h4 class="font-bold text-dark mb-2">Computer Science Trainer</h4>
-                        <p class="text-primary text-sm mb-3">Murang’a University TVET Institute</p>
-                        <p class="text-xs text-gray-500 mb-3">Jan 2025 - Dec 2025</p>
-                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
-                            <li>• Lectures and practical labs for ICT cohorts</li>
-                            <li>• Attendance tracking, assessments, and feedback</li>
-                            <li>• Updating teaching materials and notes</li>
-                        </ul>
+                <!-- Computer Science Trainer -->
+                <div class="timeline-item fade-in stagger-delay-2">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jan 2025 - Dec 2025</div>
+                        <div class="timeline-dot"></div>
+                        <div class="flex items-start justify-between mb-3 pt-6">
+                            <div class="flex-1 pr-2">
+                                <h3 class="text-lg font-bold text-dark mb-1">Computer Science Trainer</h3>
+                                <p class="text-primary font-medium text-sm">Murang'a University TVET Institute</p>
+                            </div>
+                            <div class="flex items-center gap-1.5 flex-shrink-0 ml-3">
+                                <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-lg text-xs font-medium">Contract</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-feather="book" class="w-3.5 h-3.5 text-primary"></i>
+                                <span class="text-xs font-medium text-gray-700">Teaching & Training</span>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Delivered lectures and practical labs for ICT cohorts</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Managed attendance tracking and student assessments</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Updated teaching materials and course notes</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Provided constructive feedback to students</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100">
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Curriculum Design</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Practical Labs</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Student Assessment</span>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
-                        <h4 class="font-bold text-dark mb-2">ICT Trainer</h4>
-                        <p class="text-primary text-sm mb-3">Michuki Technical Training Institute</p>
-                        <p class="text-xs text-gray-500 mb-3">May 2023 - April 2024</p>
-                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
-                            <li>• Delivered lectures and practical sessions</li>
-                            <li>• Assessed student progress</li>
-                            <li>• Updated teaching materials</li>
-                            <li>• Additional roles: Guidance & Counseling, Class Trainer</li>
+                </div>
+
+                <!-- ICT Trainer - Michuki TTI -->
+                <div class="timeline-item fade-in stagger-delay-3">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2023 - April 2024</div>
+                        <div class="timeline-dot"></div>
+                        <div class="flex items-start justify-between mb-3 pt-6">
+                            <div class="flex-1 pr-2">
+                                <h3 class="text-lg font-bold text-dark mb-1">ICT Trainer</h3>
+                                <p class="text-primary font-medium text-sm">Michuki Technical Training Institute</p>
+                            </div>
+                            <div class="flex items-center gap-1.5 flex-shrink-0 ml-3">
+                                <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-lg text-xs font-medium">1 Year</span>
+                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded-lg text-xs font-medium">Full-time</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-feather="users" class="w-3.5 h-3.5 text-primary"></i>
+                                <span class="text-xs font-medium text-gray-700">Multi-faceted Role</span>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Delivered comprehensive lectures and practical sessions</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Assessed and tracked student progress regularly</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Developed and updated teaching materials</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Served as Guidance & Counseling Officer and Class Trainer</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100">
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Technical Training</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Student Counseling</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Mentorship</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Development Intern - Xtranet -->
+                <div class="timeline-item fade-in stagger-delay-4">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dec 2022 - Feb 2023</div>
+                        <div class="timeline-dot"></div>
+                        <div class="flex items-start justify-between mb-3 pt-6">
+                            <div class="flex-1 pr-2">
+                                <h3 class="text-lg font-bold text-dark mb-1">Software Development Intern</h3>
+                                <p class="text-primary font-medium text-sm">Xtranet Communications, Nairobi</p>
+                            </div>
+                            <div class="flex items-center gap-1.5 flex-shrink-0 ml-3">
+                                <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-lg text-xs font-medium">3 Months</span>
+                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-lg text-xs font-medium">Internship</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-feather="code" class="w-3.5 h-3.5 text-primary"></i>
+                                <span class="text-xs font-medium text-gray-700">Development Work</span>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Developed software solutions using ReactJS and NextJS frameworks</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Collaborated on technology integration projects</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Assisted in implementation and deployment of software projects</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100">
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">ReactJS</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">NextJS</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Frontend Development</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Development Intern (Laravel) - Kweli Capital -->
+                <div class="timeline-item fade-in stagger-delay-5">
+                    <div class="timeline-content">
+                        <div class="timeline-date">July 2022 - Sept 2022</div>
+                        <div class="timeline-dot"></div>
+                        <div class="flex items-start justify-between mb-3 pt-6">
+                            <div class="flex-1 pr-2">
+                                <h3 class="text-lg font-bold text-dark mb-1">Software Development Intern (Laravel)</h3>
+                                <p class="text-primary font-medium text-sm">Kweli Capital Ltd, Nairobi</p>
+                            </div>
+                            <div class="flex items-center gap-1.5 flex-shrink-0 ml-3">
+                                <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-lg text-xs font-medium">3 Months</span>
+                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-lg text-xs font-medium">Internship</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-feather="database" class="w-3.5 h-3.5 text-primary"></i>
+                                <span class="text-xs font-medium text-gray-700">Backend Development</span>
+                            </div>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Created and maintained Laravel-based software systems</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Updated technical documentation and blog content</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-secondary mt-0.5 flex-shrink-0"></i>
+                                    <span class="text-sm text-gray-600">Implemented VueJS frontend solutions</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100">
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Laravel</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">PHP</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">VueJS</span>
+                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded text-xs font-medium">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile/Tablet Grid View -->
+            <div class="lg:hidden space-y-6">
+                <!-- Current Role Card -->
+                <div class="experience-card hover-lift fade-in stagger-delay-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-gradient-to-r from-primary to-purple-600 text-white rounded-lg text-xs font-medium mb-2">Current Role</span>
+                            <h3 class="text-lg font-bold text-dark mb-1">PSC Intern - ICT Section</h3>
+                            <p class="text-primary font-medium text-sm">State Department for Performance and Delivery Management</p>
+                        </div>
+                        <span class="px-2 py-1 bg-primary/10 text-primary rounded-lg text-xs font-medium">April 2024 - April 2025</span>
+                    </div>
+                    
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li class="flex items-start gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>System backups, server builds, and recovery</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Software and server monitoring</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>User support and training</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">System Admin</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">User Support</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Technical Training</span>
+                    </div>
+                </div>
+
+                <!-- Other Roles Grid for Mobile -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Computer Science Trainer -->
+                    <div class="experience-card hover-lift fade-in stagger-delay-2">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-dark mb-1">Computer Science Trainer</h3>
+                                <p class="text-primary font-medium text-sm">Murang'a University TVET Institute</p>
+                            </div>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded-lg text-xs font-medium">Jan 2025 - Dec 2025</span>
+                        </div>
+                        
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                                <span>Lectures and practical labs</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                                <span>Student assessments and feedback</span>
+                            </li>
                         </ul>
                     </div>
 
-                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
-                        <h4 class="font-bold text-dark mb-2">Software Development Intern</h4>
-                        <p class="text-primary text-sm mb-3">Xtranet Communications, Nairobi</p>
-                        <p class="text-xs text-gray-500 mb-3">Dec 2022 - Feb 2023</p>
-                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
-                            <li>• Developed software solutions with ReactJS and NextJS</li>
-                            <li>• Collaborated on technology integration</li>
-                            <li>• Assisted in implementation projects</li>
+                    <!-- ICT Trainer - Michuki TTI -->
+                    <div class="experience-card hover-lift fade-in stagger-delay-3">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-dark mb-1">ICT Trainer</h3>
+                                <p class="text-primary font-medium text-sm">Michuki Technical Training Institute</p>
+                            </div>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded-lg text-xs font-medium">May 2023 - April 2024</span>
+                        </div>
+                        
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                                <span>Lecture delivery and practical sessions</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                                <span>Guidance & Counseling</span>
+                            </li>
                         </ul>
                     </div>
 
-                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
-                        <h4 class="font-bold text-dark mb-2">Software Development Intern (Laravel)</h4>
-                        <p class="text-primary text-sm mb-3">Kweli Capital Ltd, Nairobi</p>
-                        <p class="text-xs text-gray-500 mb-3">July 2022 - Sept 2022</p>
-                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
-                            <li>• Created and maintained software systems</li>
-                            <li>• Updated tech blogs</li>
-                            <li>• Implemented VueJS-based solutions</li>
+                    <!-- Software Dev Intern - Xtranet -->
+                    <div class="experience-card hover-lift fade-in stagger-delay-4">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-dark mb-1">Software Development Intern</h3>
+                                <p class="text-primary font-medium text-sm">Xtranet Communications</p>
+                            </div>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded-lg text-xs font-medium">Dec 2022 - Feb 2023</span>
+                        </div>
+                        
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                                <span>ReactJS & NextJS development</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                                <span>Technology integration</span>
+                            </li>
                         </ul>
                     </div>
 
-                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
-                        <h4 class="font-bold text-dark mb-2">TVET Trainer</h4>
-                        <p class="text-primary text-sm mb-3">Kisiwa Technical Training Institute</p>
-                        <p class="text-xs text-gray-500 mb-3">2019 - 2022</p>
-                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
-                            <li>• Trained ICT subjects</li>
-                            <li>• Developed and evaluated training content</li>
-                            <li>• Mobile training delivery</li>
+                    <!-- Software Dev Intern - Kweli Capital -->
+                    <div class="experience-card hover-lift fade-in stagger-delay-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-dark mb-1">Software Dev Intern (Laravel)</h3>
+                                <p class="text-primary font-medium text-sm">Kweli Capital Ltd</p>
+                            </div>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded-lg text-xs font-medium">July 2022 - Sept 2022</span>
+                        </div>
+                        
+                        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                                <span>Laravel software systems</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="w-4 h-4 text-secondary mt-0.5 flex-shrink-0"></i>
+                                <span>VueJS frontend implementation</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
-                        <h4 class="font-bold text-dark mb-2">Teacher Trainee Attaché</h4>
-                        <p class="text-primary text-sm mb-3">Mwala Technical & Vocational College</p>
-                        <p class="text-xs text-gray-500 mb-3">May 2022 - July 2022</p>
-                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
-                            <li>• Classroom delivery and student support</li>
-                            <li>• Assignments, assessments, and feedback</li>
-                            <li>• Updating teaching documents and materials</li>
-                        </ul>
+                </div>
+            </div>
+
+            <!-- Career Statistics -->
+            <div class="mt-10 sm:mt-12 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-5 sm:p-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">4+</div>
+                        <div class="text-gray-600 font-medium">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-secondary mb-2">8+</div>
+                        <div class="text-gray-600 font-medium">Positions Held</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">100%</div>
+                        <div class="text-gray-600 font-medium">Professional Growth</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-secondary mb-2">6+</div>
+                        <div class="text-gray-600 font-medium">Technologies Mastered</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-12 sm:py-16 lg:py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark mb-3 sm:mb-4">Technical Skills</h2>
-                <div class="w-20 h-1 bg-primary mx-auto"></div>
+    <!-- Skills Section - IMPROVED -->
+    <section id="skills" class="py-16 sm:py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 lg:mb-20">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                    <span class="text-sm font-medium text-secondary uppercase tracking-wider">Technical Expertise</span>
+                </div>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-dark mb-4">
+                    Skills & <span class="gradient-text">Proficiencies</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive overview of my technical skills and professional capabilities
+                </p>
             </div>
             
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Frontend Skills -->
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-xl">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3 sm:mb-4">
-                        <i data-feather="code"></i>
+            <!-- Skills Categories -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <!-- Frontend Development -->
+                <div class="bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+                            <i data-feather="layout" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark">Frontend Development</h3>
+                            <p class="text-sm text-gray-500">Modern UI/UX implementation</p>
+                        </div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-dark mb-3 sm:mb-4">Frontend Development</h3>
-                    <div class="space-y-3 sm:space-y-4">
+                    
+                    <div class="space-y-5">
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
-                                <span>HTML/CSS</span>
-                                <span>95%</span>
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                <span>HTML5/CSS3</span>
+                                <span class="font-bold text-primary">95%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 95%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-primary to-purple-600 h-2 rounded-full" style="--skill-width: 95%;" data-width="95%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
-                                <span>JavaScript</span>
-                                <span>90%</span>
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                <span>JavaScript/ES6+</span>
+                                <span class="font-bold text-primary">90%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 90%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-primary to-purple-600 h-2 rounded-full" style="--skill-width: 90%;" data-width="90%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
                                 <span>ReactJS</span>
-                                <span>85%</span>
+                                <span class="font-bold text-primary">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 85%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-primary to-purple-600 h-2 rounded-full" style="--skill-width: 85%;" data-width="85%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
                                 <span>VueJS</span>
-                                <span>85%</span>
+                                <span class="font-bold text-primary">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 85%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-primary to-purple-600 h-2 rounded-full" style="--skill-width: 85%;" data-width="85%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Backend Skills -->
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-xl">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3 sm:mb-4">
-                        <i data-feather="server"></i>
+                <!-- Backend & Databases -->
+                <div class="bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center">
+                            <i data-feather="server" class="w-6 h-6 text-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark">Backend & Databases</h3>
+                            <p class="text-sm text-gray-500">Server-side and data management</p>
+                        </div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-dark mb-3 sm:mb-4">Backend & Databases</h3>
-                    <div class="space-y-3 sm:space-y-4">
+                    
+                    <div class="space-y-5">
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
                                 <span>PHP/Laravel</span>
-                                <span>85%</span>
+                                <span class="font-bold text-secondary">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 85%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-secondary to-green-500 h-2 rounded-full" style="--skill-width: 85%;" data-width="85%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
                                 <span>Java</span>
-                                <span>80%</span>
+                                <span class="font-bold text-secondary">80%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 80%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-secondary to-green-500 h-2 rounded-full" style="--skill-width: 80%;" data-width="80%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
                                 <span>SQL/MySQL</span>
-                                <span>90%</span>
+                                <span class="font-bold text-secondary">90%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 90%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-secondary to-green-500 h-2 rounded-full" style="--skill-width: 90%;" data-width="90%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
-                                <span>DevOps</span>
-                                <span>75%</span>
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                <span>DevOps Basics</span>
+                                <span class="font-bold text-secondary">75%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 75%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-secondary to-green-500 h-2 rounded-full" style="--skill-width: 75%;" data-width="75%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Professional Skills -->
-                <div class="bg-gray-50 p-4 sm:p-6 rounded-xl sm:col-span-2 lg:col-span-1">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3 sm:mb-4">
-                        <i data-feather="users"></i>
+                <div class="bg-gradient-to-b from-white to-gray-50 rounded-2xl p-6 hover-lift">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-purple-500/10 rounded-xl flex items-center justify-center">
+                            <i data-feather="users" class="w-6 h-6 text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark">Professional Skills</h3>
+                            <p class="text-sm text-gray-500">Training and leadership</p>
+                        </div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-dark mb-3 sm:mb-4">Professional Skills</h3>
-                    <div class="space-y-3 sm:space-y-4">
+                    
+                    <div class="space-y-5">
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
                                 <span>ICT Training & Pedagogy</span>
-                                <span>95%</span>
+                                <span class="font-bold text-purple-600">95%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 95%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="--skill-width: 95%;" data-width="95%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
                                 <span>UI/UX Design</span>
-                                <span>85%</span>
+                                <span class="font-bold text-purple-600">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 85%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="--skill-width: 85%;" data-width="85%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
                                 <span>Project Management</span>
-                                <span>80%</span>
+                                <span class="font-bold text-purple-600">80%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 80%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="--skill-width: 80%;" data-width="80%"></div>
                             </div>
                         </div>
+                        
                         <div>
-                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
-                                <span>Communication Skills</span>
-                                <span>90%</span>
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                <span>Communication</span>
+                                <span class="font-bold text-purple-600">90%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
-                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 90%"></div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 skill-bar">
+                                <div class="skill-bar-fill bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="--skill-width: 90%;" data-width="90%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-10 sm:mt-12">
-                <h3 class="text-lg sm:text-xl font-bold text-dark mb-3 sm:mb-4">Additional Capabilities</h3>
-                <div class="flex flex-wrap gap-2 sm:gap-3">
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">SEO & CMS</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">UX/UI & Visual Design</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">DevOps & CI/CD</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">Cybersecurity Fundamentals</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">Android / Mobile</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">E-learning & Microlearning</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">Curriculum & Assessment Design</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">OER / UDL</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">Microsoft Office Suite</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">Problem Solving & Analysis</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">French (Basic)</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm">Training & Facilitation</span>
+            <!-- Additional Skills Cloud -->
+            <div class="bg-gray-50 rounded-2xl p-6 sm:p-8">
+                <h3 class="text-xl font-bold text-dark mb-6 text-center">Additional Capabilities</h3>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">SEO & CMS</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">UX/UI & Visual Design</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">DevOps & CI/CD</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">Cybersecurity Fundamentals</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">Android / Mobile</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">E-learning & Microlearning</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">Curriculum Design</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">Microsoft Office Suite</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">Problem Solving</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">French (Basic)</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">Training & Facilitation</span>
+                    <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow">Documentation</span>
                 </div>
             </div>
         </div>
@@ -1222,12 +1726,63 @@
         </div>
     </div>
 </section>
-
     <custom-footer></custom-footer>
 
     <script src="script.js"></script>
     <script>
         feather.replace();
+        
+        // Animate skill bars when in viewport
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar-fill');
+            
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                const isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+                
+                if (isInViewport && !bar.classList.contains('animate')) {
+                    bar.classList.add('animate');
+                    // Apply the actual width from data attribute
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width;
+                }
+            });
+        }
+        
+        // Animate fade-in elements
+        function animateFadeIn() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isInViewport = rect.top <= window.innerHeight * 0.9;
+                
+                if (isInViewport) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial styles for fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // Trigger initial animations
+            animateSkillBars();
+            animateFadeIn();
+            
+            // Animate on scroll
+            window.addEventListener('scroll', () => {
+                animateSkillBars();
+                animateFadeIn();
+            });
+        });
                 
         // GitHub Repositories Data
         const githubRepos = [
@@ -1810,6 +2365,7 @@ style.textContent = `
 `;
 
 document.head.appendChild(style);
+        
     </script>
 </body>
 </html>
