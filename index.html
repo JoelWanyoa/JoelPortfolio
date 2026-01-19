@@ -1102,7 +1102,7 @@
                         <textarea id="message" name="message" rows="5" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition text-sm sm:text-base resize-y" required></textarea>
                     </div>
                     <div class="flex gap-4">
-                        <button type="submit" class="flex-1 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-sm sm:text-base flex items-center justify-center gap-2">
+                        <button type="submit" class="flex-1 px-5 sm:px-6 py-2.5  sm:py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-sm sm:text-base flex items-center justify-center gap-2">
                             <i data-feather="send" class="w-4 h-4"></i>
                             Send Message
                         </button>
@@ -1465,22 +1465,26 @@
             });
         });
 
-        // Enhanced sendMail function with loading states
-// Enhanced sendMail function with better email formatting
+       // Enhanced sendMail function with reliable email formatting and loading states
 function sendMail(form) {
     // Get form elements
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
     
+    // Get form values
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    
     // Validate form
-    if (!form.name.value.trim() || !form.email.value.trim() || !form.message.value.trim()) {
-        showNotification('Please fill in all fields before sending.', 'error');
+    if (!name || !email || !message) {
+        showNotification('Please fill in all required fields.', 'error');
         return false;
     }
     
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(form.email.value)) {
+    if (!emailRegex.test(email)) {
         showNotification('Please enter a valid email address.', 'error');
         return false;
     }
@@ -1490,43 +1494,49 @@ function sendMail(form) {
     submitBtn.disabled = true;
     feather.replace();
     
-    // Get form values
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+    // Create plain text email body with proper formatting
+    const bodyLines = [
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        "NEW CONTACT FORM SUBMISSION",
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        "",
+        "CONTACT INFORMATION",
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Date: ${new Date().toLocaleDateString()}`,
+        `Time: ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`,
+        "",
+        "MESSAGE",
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        message,
+        "",
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        "Sent from Joel Wanyoa Khamala's Portfolio",
+        `Website: ${window.location.hostname}`,
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    ];
     
-    // Format the email content with better formatting
-    const subject = `Portfolio Contact: ${name}`;
+    // Join with newlines
+    const emailBody = bodyLines.join('\n');
     
-    // Create a nicely formatted email body
-    const body = `
-📋 New Contact Form Submission
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-👤 **Contact Information:**
-• Name: ${name}
-• Email: ${email}
-• Date: ${new Date().toLocaleDateString()}
-• Time: ${new Date().toLocaleTimeString()}
-
-📝 **Message:**
-${message}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 Sent from: ${window.location.href}
-    `.trim();
-    
-    // Create mailto URL - encode the entire body
-    const mailtoUrl = `mailto:joelkhamala007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // Create mailto URL
+    const subject = `Portfolio Message from ${name}`;
+    const mailtoUrl = `mailto:joelkhamala007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
     
     // Small delay for better UX
     setTimeout(() => {
         try {
-            // Open default email client
-            window.location.href = mailtoUrl;
+            // Try to open in new tab/window
+            const newWindow = window.open(mailtoUrl, '_blank');
+            
+            // Fallback if popup blocked
+            if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                window.location.href = mailtoUrl;
+            }
             
             // Show success message
-            showNotification('Opening your email client... Please send the pre-filled email to contact Joel.', 'success');
+            showNotification('Email client opened! Please send the email to complete.', 'success');
             
             // Clear form after a short delay
             setTimeout(() => {
@@ -1558,11 +1568,15 @@ ${message}
 
 // Notification system
 function showNotification(message, type = 'info') {
+    // Remove any existing notifications
+    const existingNotifications = document.querySelectorAll('.notification-toast');
+    existingNotifications.forEach(notification => notification.remove());
+    
     // Create notification element
     const notification = document.createElement('div');
     const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
     
-    notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-4 rounded-lg shadow-lg z-50 transform translate-x-full opacity-0 transition-all duration-300`;
+    notification.className = `notification-toast fixed top-4 right-4 ${bgColor} text-white px-6 py-4 rounded-lg shadow-lg z-50 transform translate-x-full opacity-0 transition-all duration-300`;
     notification.innerHTML = `
         <div class="flex items-center gap-3">
             <i data-feather="${type === 'success' ? 'check-circle' : type === 'error' ? 'alert-circle' : 'info'}" class="w-5 h-5"></i>
@@ -1585,6 +1599,99 @@ function showNotification(message, type = 'info') {
         notification.classList.add('translate-x-full', 'opacity-0');
         setTimeout(() => notification.remove(), 300);
     }, 5000);
+}
+
+// Confirmation modal
+function showConfirmationModal(name) {
+    // Remove any existing modals
+    const existingModals = document.querySelectorAll('.confirmation-modal');
+    existingModals.forEach(modal => modal.remove());
+    
+    const modal = document.createElement('div');
+    modal.className = 'confirmation-modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 animate-fade-in';
+    modal.innerHTML = `
+        <div class="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full animate-scale-in">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-feather="check" class="w-8 h-8 text-green-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-dark mb-2">Thank you, ${name}!</h3>
+                <p class="text-gray-600 mb-4">Your email client has been opened with your message.</p>
+                <p class="text-sm text-gray-500 mb-6">Please click "Send" in your email application to complete the process.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="this.closest('.confirmation-modal').remove()" class="btn btn-primary px-6 py-2.5">
+                        Got it!
+                    </button>
+                    <button onclick="window.open('mailto:joelkhamala007@gmail.com', '_blank'); this.closest('.confirmation-modal').remove()" class="btn btn-secondary px-6 py-2.5">
+                        Open Email Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    feather.replace();
+    
+    // Auto-close modal after 10 seconds
+    setTimeout(() => {
+        const modal = document.querySelector('.confirmation-modal');
+        if (modal) modal.remove();
+    }, 10000);
+}
+
+// Add CSS animations if not already present
+if (!document.querySelector('#contact-animations')) {
+    const style = document.createElement('style');
+    style.id = 'contact-animations';
+    style.textContent = `
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scale-in {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fade-in 0.2s ease-out;
+        }
+        
+        .animate-scale-in {
+            animation: scale-in 0.2s ease-out;
+        }
+        
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        
+        .confirmation-modal {
+            z-index: 9999;
+        }
+        
+        .notification-toast {
+            z-index: 10000;
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 // Confirmation modal
