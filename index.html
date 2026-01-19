@@ -27,6 +27,73 @@
             }
         }
     </script>
+    <style>
+        .repo-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .repo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #4F46E5;
+        }
+        
+        .tech-tag {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .tech-html {
+            background-color: rgba(227, 76, 38, 0.1);
+            color: #e34c26;
+        }
+        
+        .tech-js {
+            background-color: rgba(247, 223, 30, 0.1);
+            color: #f7df1e;
+        }
+        
+        .tech-ts {
+            background-color: rgba(49, 120, 198, 0.1);
+            color: #3178c6;
+        }
+        
+        .tech-css {
+            background-color: rgba(21, 114, 182, 0.1);
+            color: #1572b6;
+        }
+        
+        .tech-php {
+            background-color: rgba(120, 119, 198, 0.1);
+            color: #7877c6;
+        }
+        
+        .tech-java {
+            background-color: rgba(178, 30, 30, 0.1);
+            color: #b21e1e;
+        }
+        
+        .repo-stats {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+        
+        .github-icon {
+            background: linear-gradient(135deg, #333 0%, #24292e 100%);
+        }
+        
+        .filter-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .filter-btn.active {
+            background-color: #4F46E5;
+            color: white;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
     <custom-navbar></custom-navbar>
@@ -168,6 +235,86 @@
                         <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">ICT Training</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Projects Section -->
+    <section id="github-projects" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 sm:mb-12 lg:mb-16">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                    <div class="text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 mb-3">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-xs sm:text-sm font-medium text-primary uppercase tracking-wider">GitHub Portfolio</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-3">
+                            <span class="text-primary">17</span> GitHub Repositories
+                        </h2>
+                        <p class="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl">
+                            A curated view of my open‑source work across client projects, experiments, and learning builds.
+                        </p>
+                    </div>
+                    <!-- GitHub Stats -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                        <div class="bg-white/70 backdrop-blur rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+                            <div class="text-xs text-gray-500 mb-1">Repositories</div>
+                            <div class="text-xl sm:text-2xl font-bold text-primary">17</div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+                            <div class="text-xs text-gray-500 mb-1">Commits (sample)</div>
+                            <div class="text-xl sm:text-2xl font-bold text-secondary">13+</div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+                            <div class="text-xs text-gray-500 mb-1">Languages</div>
+                            <div class="text-xl sm:text-2xl font-bold text-primary">5</div>
+                        </div>
+                        <div class="bg-white/70 backdrop-blur rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+                            <div class="text-xs text-gray-500 mb-1">HTML Projects</div>
+                            <div class="text-xl sm:text-2xl font-bold text-secondary">8</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Filter Bar -->
+                <div class="mt-8">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div class="text-xs sm:text-sm text-gray-500 md:order-2 text-center md:text-right">
+                            Click a chip to filter by primary technology.
+                        </div>
+                        <div class="inline-flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 bg-white/70 backdrop-blur rounded-full px-2 py-1 border border-gray-100 shadow-sm md:order-1" id="filter-buttons">
+                            <button class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm bg-gray-100 hover:bg-primary hover:text-white transition-all" data-filter="all">
+                                All
+                            </button>
+                            <button class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm bg-gray-100 hover:bg-primary hover:text-white transition-all" data-filter="html">
+                                HTML / CSS
+                            </button>
+                            <button class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm bg-gray-100 hover:bg-primary hover:text-white transition-all" data-filter="javascript">
+                                JavaScript
+                            </button>
+                            <button class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm bg-gray-100 hover:bg-primary hover:text-white transition-all" data-filter="typescript">
+                                TypeScript
+                            </button>
+                            <button class="filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm bg-gray-100 hover:bg-primary hover:text-white transition-all" data-filter="css">
+                                CSS Experiments
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GitHub Repositories Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" id="github-repos">
+                <!-- Repository items will be populated here -->
+            </div>
+            
+            <!-- View More Button -->
+            <div class="text-center mt-10 sm:mt-12">
+                <a href="https://github.com/JoelWanyoa" target="_blank" class="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-dark hover:bg-gray-800 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl">
+                    <i data-feather="github" class="w-5 h-5"></i>
+                    View All Repositories on GitHub
+                </a>
             </div>
         </div>
     </section>
@@ -950,7 +1097,287 @@
     <script src="script.js"></script>
     <script>
         feather.replace();
-        
+                
+        // GitHub Repositories Data
+        const githubRepos = [
+            {
+                name: "IT Service Tracker",
+                repo: "JoelWanyoa/ITServiceTracker",
+                description: "Track IT service requests, incidents, and resolutions with comprehensive management system",
+                tech: ["HTML"],
+                techClass: "html",
+                category: "html",
+                icon: "tools",
+                commits: 6
+            },
+            {
+                name: "Construction Bolt",
+                repo: "JoelWanyoa/construction_bolt",
+                description: "Construction management platform for project tracking and resource management",
+                tech: ["HTML", "JavaScript"],
+                techClass: "javascript",
+                category: "javascript",
+                icon: "hard-hat",
+                commits: 4
+            },
+            {
+                name: "School Management System",
+                repo: "JoelWanyoa/schoolmanagementsystem",
+                description: "Comprehensive system for managing school operations and academic records",
+                tech: ["HTML"],
+                techClass: "html",
+                category: "html",
+                icon: "school",
+                commits: 4
+            },
+            {
+                name: "LM Designs",
+                repo: "JoelWanyoa/LMDesigns",
+                description: "Creative design portfolio and agency website showcasing design projects",
+                tech: ["JavaScript"],
+                techClass: "javascript",
+                category: "javascript",
+                icon: "palette",
+                commits: 2
+            },
+            {
+                name: "LM Design Studio",
+                repo: "JoelWanyoa/LMDesignstudio",
+                description: "Professional design studio website with portfolio and client work展示",
+                tech: ["HTML"],
+                techClass: "html",
+                category: "html",
+                icon: "paint-brush",
+                commits: 1
+            },
+            {
+                name: "Portfolio",
+                repo: "JoelWanyoa/JoelPortfolio",
+                description: "Personal portfolio website showcasing projects, skills, and experience",
+                tech: ["HTML", "CSS", "JavaScript"],
+                techClass: "html",
+                category: "html",
+                icon: "briefcase",
+                commits: 3
+            },
+            {
+                name: "Bhungali News",
+                repo: "JoelWanyoa/BhungaliNews",
+                description: "News portal and content management system for local news coverage",
+                tech: ["TypeScript"],
+                techClass: "typescript",
+                category: "typescript",
+                icon: "newspaper",
+                commits: 2
+            },
+            {
+                name: "Arc Nexus Vision",
+                repo: "JoelWanyoa/arc-nexus-vision",
+                description: "Vision-based application with arc nexus technology integration",
+                tech: ["TypeScript"],
+                techClass: "typescript",
+                category: "typescript",
+                icon: "eye",
+                commits: 2
+            },
+            {
+                name: "Movie App",
+                repo: "JoelWanyoa/movieapp",
+                description: "Movie discovery and information application with search capabilities",
+                tech: ["CSS", "JavaScript"],
+                techClass: "javascript",
+                category: "javascript",
+                icon: "film",
+                commits: 3
+            },
+            {
+                name: "Joel Movie App",
+                repo: "JoelWanyoa/joelmovieapp",
+                description: "Alternative movie application with enhanced features and user interface",
+                tech: ["TypeScript"],
+                techClass: "typescript",
+                category: "typescript",
+                icon: "video",
+                commits: 2
+            },
+            {
+                name: "Antioch Church Website",
+                repo: "JoelWanyoa/antioch_church_website_online",
+                description: "Online platform for Antioch Church with events and community features",
+                tech: ["HTML", "CSS"],
+                techClass: "html",
+                category: "html",
+                icon: "church",
+                commits: 4
+            },
+            {
+                name: "Zamadar Technologies",
+                repo: "JoelWanyoa/ZamadarTechnologies",
+                description: "Official website for Zamadar Technologies showcasing services",
+                tech: ["HTML", "JavaScript", "CSS"],
+                techClass: "html",
+                category: "html",
+                icon: "laptop-code",
+                commits: 3
+            },
+            {
+                name: "Beacon Community",
+                repo: "JoelWanyoa/beacon-community",
+                description: "Community platform for connecting members through shared interests",
+                tech: ["TypeScript"],
+                techClass: "typescript",
+                category: "typescript",
+                icon: "users",
+                commits: 2
+            },
+            {
+                name: "Petra School Website",
+                repo: "JoelWanyoa/petra",
+                description: "Official website for Petra School with information and resources",
+                tech: ["HTML", "JavaScript", "CSS"],
+                techClass: "html",
+                category: "html",
+                icon: "graduation-cap",
+                commits: 4
+            },
+            {
+                name: "Antioch Church",
+                repo: "JoelWanyoa/Antioch_Church",
+                description: "Church management and community engagement platform",
+                tech: ["HTML", "JavaScript"],
+                techClass: "html",
+                category: "html",
+                icon: "church",
+                commits: 3
+            },
+            {
+                name: "Resq Network Official",
+                repo: "JoelWanyoa/ResqNetworkOfficial",
+                description: "Official website for Resq Network providing emergency services",
+                tech: ["HTML", "CSS", "JavaScript"],
+                techClass: "html",
+                category: "html",
+                icon: "network-wired",
+                commits: 3
+            },
+            {
+                name: "BC Project",
+                repo: "JoelWanyoa/BC",
+                description: "General purpose project with various functionalities",
+                tech: ["HTML", "JavaScript", "CSS"],
+                techClass: "html",
+                category: "html",
+                icon: "code",
+                commits: 3
+            }
+        ];
+
+        // Render GitHub Repositories
+        function getLanguageIcon(category) {
+            const c = String(category || '').toLowerCase();
+            switch (c) {
+                case 'html':
+                    return 'layout';
+                case 'css':
+                    return 'droplet';
+                case 'javascript':
+                    return 'zap';
+                case 'typescript':
+                    return 'code';
+                case 'php':
+                    return 'server';
+                case 'java':
+                    return 'coffee';
+                default:
+                    return 'code';
+            }
+        }
+
+        function renderRepositories(filter = 'all') {
+            const reposContainer = document.getElementById('github-repos');
+            const filteredRepos = filter === 'all' 
+                ? githubRepos 
+                : githubRepos.filter(repo => repo.category === filter);
+            
+            reposContainer.innerHTML = filteredRepos.map(repo => `
+                <div class="repo-card relative flex flex-col h-full bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3 mt-1">
+                        <div class="flex items-start gap-3 min-w-0 flex-1">
+                            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
+                                <i data-feather="${repo.icon}" class="w-5 h-5"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="font-semibold text-dark text-base sm:text-lg leading-snug mb-1 truncate">${repo.name}</h3>
+                                <div class="inline-flex items-center gap-1 text-[11px] sm:text-xs text-gray-500 font-mono bg-gray-50 px-2 py-1 rounded-md max-w-full">
+                                    <span class="truncate">${repo.repo}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="repo-stats flex flex-row flex-wrap sm:flex-col items-start sm:items-end gap-2 sm:gap-2 sm:mt-0">
+                            <div class="inline-flex items-center gap-1.5 px-2 py-1 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg border border-primary/20 whitespace-nowrap">
+                                <i data-feather="git-commit" class="w-3 h-3 text-primary"></i>
+                                <span class="text-xs font-semibold text-primary">${repo.commits}</span>
+                                <span class="text-[10px] text-gray-600 font-medium">commits</span>
+                            </div>
+                            <div class="inline-flex items-center gap-1.5 px-2 py-1 bg-gradient-to-r from-secondary/10 to-secondary/5 rounded-lg border border-secondary/20 whitespace-nowrap">
+                                <i data-feather="${getLanguageIcon(repo.category)}" class="w-3 h-3 text-secondary"></i>
+                                <span class="text-[11px] font-semibold text-secondary capitalize">${repo.category}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                        ${repo.description}
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${repo.tech.map(tech => `
+                            <span class="tech-tag tech-${repo.techClass}">${tech}</span>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="mt-auto pt-2 border-t border-dashed border-gray-100 flex items-center justify-between gap-3">
+                        <a href="https://github.com/${repo.repo}" target="_blank" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                            <i data-feather="github" class="w-4 h-4"></i>
+                            <span>Open repository</span>
+                        </a>
+                        <span class="text-[11px] sm:text-xs text-gray-400">
+                            Public • GitHub
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Re-initialize feather icons for new content
+            feather.replace();
+        }
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            renderRepositories();
+            
+            // Add active class to first filter button
+            document.querySelector('[data-filter="all"]').classList.add('active');
+            
+            // Filter button event listeners
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Render filtered repositories
+                    renderRepositories(filter);
+                });
+            });
+        });
+
         // Contact form submission
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
