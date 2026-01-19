@@ -8,7 +8,7 @@ A modern, responsive portfolio website showcasing the professional journey, skil
 
 ## 🌟 Live Demo
 
-[**View Live Portfolio**](#) *(Replace with your deployment link)*
+[**View Live Portfolio**](https://joelwanyoa.github.io/JoelPortfolio/) *(Replace with your deployment link)*
 
 ## 📋 Table of Contents
 
