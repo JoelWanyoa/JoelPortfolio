@@ -180,52 +180,93 @@
                     </div>
                     <div class="pt-2 sm:pt-4">
                         <h4 class="text-base sm:text-lg font-semibold text-dark mb-3" id="education">Education</h4>
-                        <div class="pt-2 sm:pt-4">
-                            <h4 class="text-base sm:text-lg font-semibold text-dark mb-3">Education</h4>
-                            <div class="space-y-3 sm:space-y-4">
-                                <!-- Bachelor's Degree -->
-                                <div class="flex gap-3 sm:gap-4">
-                                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
-                                        <i data-feather="book"></i>
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="pt-2 sm:pt-4">
+                                <div class="space-y-3 sm:space-y-4">
+                                    <!-- Bachelor's Degree -->
+                                    <div class="flex gap-3 sm:gap-4">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                            <i data-feather="book"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-dark text-sm sm:text-base">Bachelor of Science in Computer Science</h5>
+                                            <p class="text-gray-500 text-xs sm:text-sm">Laikipia University • 2014-2018</p>
+                                            <p class="text-gray-500 text-xs mt-1">Key Courses: Programming, AI, Cryptography, Web Development, Software Engineering, Databases, Computer Networks</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h5 class="font-medium text-dark text-sm sm:text-base">Bachelor of Science in Computer Science</h5>
-                                        <p class="text-gray-500 text-xs sm:text-sm">Laikipia University • 2014-2018</p>
-                                        <p class="text-gray-500 text-xs mt-1">Key Courses: Programming, AI, Cryptography, Web Development, Software Engineering, Databases, Computer Networks</p>
+                                    
+                                    <!-- Diploma -->
+                                    <div class="flex gap-3 sm:gap-4">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                            <i data-feather="award"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-dark text-sm sm:text-base">Diploma in Technical Trainer's Education (Pedagogy)</h5>
+                                            <p class="text-gray-500 text-xs sm:text-sm">Kenya Technical Trainers College • 2020</p>
+                                            <p class="text-gray-500 text-xs mt-1">Key Courses: Training Methods, Web Programming, Mobile Programming, Assessment & Evaluation, Educational Psychology, ICT Integration</p>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <!-- Diploma -->
-                                <div class="flex gap-3 sm:gap-4">
-                                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
-                                        <i data-feather="award"></i>
+                                    
+                                    <!-- High School Certificate -->
+                                    <div class="flex gap-3 sm:gap-4">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                            <i data-feather="graduation-cap"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-dark text-sm sm:text-base">Kenya Certificate of Secondary Education (KCSE)</h5>
+                                            <p class="text-gray-500 text-xs sm:text-sm">St. Joseph's Boys High School - Kitale • 2013</p>
+                                            <div class="mt-1">
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded mr-1 mb-1">Mean Grade: B+ (Plus)</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded mr-1 mb-1">Maths: A-</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded mr-1 mb-1">Physics: A</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded mr-1 mb-1">Chemistry: B+</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded mr-1 mb-1">Biology: B</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-purple-100 text-purple-800 text-xs rounded mr-1 mb-1">CRE: A-</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-purple-100 text-purple-800 text-xs rounded mr-1 mb-1">French: B+</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-purple-100 text-purple-800 text-xs rounded mr-1 mb-1">English: B</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-purple-100 text-purple-800 text-xs rounded mr-1 mb-1">Kiswahili: B+</span>
+                                            </div>
+                                            <p class="text-gray-500 text-xs mt-1">A strong foundation in sciences and languages, demonstrating academic excellence</p>
+                                            <div class="mt-2 flex gap-2">
+                                                <button onclick="viewCertificate('kcse')" class="text-xs text-primary hover:text-primary/80 font-medium flex items-center gap-1">
+                                                    <i data-feather="eye" class="w-3 h-3"></i>
+                                                    View Certificate
+                                                </button>
+                                                <button onclick="downloadPDF('KCSE.pdf')" class="text-xs text-secondary hover:text-secondary/80 font-medium flex items-center gap-1">
+                                                    <i data-feather="download" class="w-3 h-3"></i>
+                                                    Download PDF
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h5 class="font-medium text-dark text-sm sm:text-base">Diploma in Technical Trainer's Education (Pedagogy)</h5>
-                                        <p class="text-gray-500 text-xs sm:text-sm">Kenya Technical Trainers College • 2020</p>
-                                        <p class="text-gray-500 text-xs mt-1">Key Courses: Training Methods, Web Programming, Mobile Programming, Assessment & Evaluation, Educational Psychology, ICT Integration</p>
-                                    </div>
-                                </div>
-                                
-                                <!-- High School Certificate -->
-                                <div class="flex gap-3 sm:gap-4">
-                                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
-                                        <i data-feather="graduation-cap"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-medium text-dark text-sm sm:text-base">Kenya Certificate of Secondary Education (KCSE)</h5>
-                                        <p class="text-gray-500 text-xs sm:text-sm">St. Joseph's Boys High School, Kitale • 2013</p>
-                                    </div>
-                                </div>
-                                
-                                <!-- Primary School Certificate -->
-                                <div class="flex gap-3 sm:gap-4">
-                                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
-                                        <i data-feather="book-open"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-medium text-dark text-sm sm:text-base">Kenya Certificate of Primary Education (KCPE)</h5>
-                                        <p class="text-gray-500 text-xs sm:text-sm">ICFEM Dreamland Education Centre • 2009</p>
+                                    
+                                    <!-- Primary School Certificate -->
+                                    <div class="flex gap-3 sm:gap-4">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                            <i data-feather="book-open"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-dark text-sm sm:text-base">Kenya Certificate of Primary Education (KCPE)</h5>
+                                            <p class="text-gray-500 text-xs sm:text-sm">ICFEM Dreamland Education Centre • 2009</p>
+                                            <div class="mt-1">
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded mr-1 mb-1">Maths: A-</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded mr-1 mb-1">Kiswahili: B+</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded mr-1 mb-1">English: B</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded mr-1 mb-1">Science: B</span>
+                                                <span class="inline-flex items-center px-2 py-0.5 bg-purple-100 text-purple-800 text-xs rounded mr-1 mb-1">Social Studies & RE: B</span>
+                                            </div>
+                                            <p class="text-gray-500 text-xs mt-1">Strong performance in core subjects, laying the foundation for secondary education</p>
+                                            <div class="mt-2 flex gap-2">
+                                                <button onclick="viewCertificate('kcpe')" class="text-xs text-primary hover:text-primary/80 font-medium flex items-center gap-1">
+                                                    <i data-feather="eye" class="w-3 h-3"></i>
+                                                    View Certificate
+                                                </button>
+                                                <button onclick="downloadPDF('KCPE.pdf')" class="text-xs text-secondary hover:text-secondary/80 font-medium flex items-center gap-1">
+                                                    <i data-feather="download" class="w-3 h-3"></i>
+                                                    Download PDF
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -265,16 +306,6 @@
                             <p class="text-gray-600 text-xs sm:text-sm">
                                 Lenity Management Group, Florida, USA | Led development of online platform architecture, designed UI/UX, 
                                 created servers, ensured system responsiveness, conducted testing and troubleshooting.
-                            </p>
-                        </div>
-                        <div class="p-4 sm:p-5 bg-gray-50 rounded-lg">
-                            <div class="flex items-center gap-2 sm:gap-3 mb-2">
-                                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-secondary rounded-full flex-shrink-0"></div>
-                                <h5 class="font-medium text-dark text-sm sm:text-base">Software Development Intern (Laravel)</h5>
-                                <span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded">July 2022 - Sept 2022</span>
-                            </div>
-                            <p class="text-gray-600 text-xs sm:text-sm">
-                                Kweli Capital Ltd, Nairobi | Developed and maintained Laravel software systems, managed technical documentation, and implemented VueJS frontend solutions.
                             </p>
                         </div>
                         <div class="p-4 sm:p-5 bg-gray-50 rounded-lg">
@@ -1762,6 +1793,358 @@ function showConfirmationModal(name) {
     
     document.body.appendChild(modal);
     feather.replace();
+}
+
+
+// Certificate Modal System
+function viewCertificate(certType) {
+    let certificateData;
+    let title;
+    
+    if (certType === 'kcse') {
+        certificateData = {
+            title: 'Kenya Certificate of Secondary Education (KCSE)',
+            school: 'St. Joseph\'s Boys High School - Kitale',
+            year: '2013',
+            meanGrade: 'B+ (Plus)',
+            subjects: [
+                { name: 'Mathematics', grade: 'A- (Minus)' },
+                { name: 'Physics', grade: 'A' },
+                { name: 'Chemistry', grade: 'B+ (Plus)' },
+                { name: 'Biology', grade: 'B (Plain)' },
+                { name: 'Christian Religious Education', grade: 'A- (Minus)' },
+                { name: 'French', grade: 'B+ (Plus)' },
+                { name: 'English', grade: 'B (Plain)' },
+                { name: 'Kiswahili', grade: 'B+ (Plus)' }
+            ],
+            certificateNumber: '23600014071',
+            description: 'Strong performance in science subjects with an overall Mean Grade of B+'
+        };
+        title = 'KCSE Certificate';
+    } else if (certType === 'kcpe') {
+        certificateData = {
+            title: 'Kenya Certificate of Primary Education (KCPE)',
+            school: 'ICFEM Dreamland Education Centre',
+            year: '2009',
+            centerNumber: '611146',
+            candidateNumber: '009',
+            subjects: [
+                { name: 'Mathematics', grade: 'A- (Minus)' },
+                { name: 'Kiswahili', grade: 'B+ (Plus)' },
+                { name: 'English Language', grade: 'B (Plain)' },
+                { name: 'Science', grade: 'B (Plain)' },
+                { name: 'Social Studies & Religious Education', grade: 'B (Plain)' }
+            ],
+            description: 'Consistent performance across all core subjects'
+        };
+        title = 'KCPE Certificate';
+    }
+    
+    showCertificateModal(certificateData, title, certType);
+}
+
+function showCertificateModal(data, title, certType) {
+    // Remove any existing modals
+    const existingModals = document.querySelectorAll('.certificate-modal');
+    existingModals.forEach(modal => modal.remove());
+    
+    const modal = document.createElement('div');
+    modal.className = 'certificate-modal fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 animate-fade-in backdrop-blur-sm';
+    modal.innerHTML = `
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden animate-scale-in shadow-2xl">
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-primary to-primary/90 p-6 text-white">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                            <i data-feather="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">${title}</h3>
+                            <p class="text-white/90 text-sm">${data.title}</p>
+                        </div>
+                    </div>
+                    <button onclick="this.closest('.certificate-modal').remove()" 
+                            class="text-white hover:text-white/80 transition-colors">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Left Column - Certificate Info -->
+                    <div class="md:col-span-2 space-y-6">
+                        <!-- Certificate Summary -->
+                        <div class="bg-gray-50 rounded-xl p-5">
+                            <h4 class="font-bold text-dark mb-3 text-lg">Certificate Details</h4>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">School/Institution</p>
+                                    <p class="font-medium text-dark">${data.school}</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">Examination Year</p>
+                                    <p class="font-medium text-dark">${data.year}</p>
+                                </div>
+                                ${data.meanGrade ? `
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">Mean Grade</p>
+                                    <p class="font-medium text-dark flex items-center gap-2">
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">${data.meanGrade}</span>
+                                    </p>
+                                </div>
+                                ` : ''}
+                                ${data.certificateNumber ? `
+                                <div>
+                                    <p class="text-sm text-gray-500 mb-1">Certificate Number</p>
+                                    <p class="font-medium text-dark font-mono">${data.certificateNumber}</p>
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                        
+                        <!-- Subjects Performance -->
+                        <div>
+                            <h4 class="font-bold text-dark mb-3 text-lg">Subject Performance</h4>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                ${data.subjects.map(subject => `
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <span class="font-medium text-dark">${subject.name}</span>
+                                    <span class="px-3 py-1 ${
+                                        subject.grade.includes('A') ? 'bg-green-100 text-green-800' :
+                                        subject.grade.includes('B+') ? 'bg-blue-100 text-blue-800' :
+                                        subject.grade.includes('B') ? 'bg-blue-100 text-blue-800' :
+                                        'bg-purple-100 text-purple-800'
+                                    } rounded-full text-sm font-medium">${subject.grade}</span>
+                                </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <!-- Description -->
+                        <div class="bg-primary/5 rounded-xl p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-feather="info" class="w-5 h-5 text-primary"></i>
+                                <h5 class="font-bold text-dark">Academic Performance</h5>
+                            </div>
+                            <p class="text-gray-600">${data.description}</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column - Actions & Preview -->
+                    <div class="space-y-6">
+                        <!-- Certificate Preview -->
+                        <div class="bg-gradient-to-br from-gray-50 to-white rounded-xl p-5 border border-gray-200">
+                            <h5 class="font-bold text-dark mb-3">Certificate Preview</h5>
+                            <div class="aspect-[4/3] bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                                <div class="text-center">
+                                    <i data-feather="file-text" class="w-12 h-12 text-primary/60 mb-2 mx-auto"></i>
+                                    <p class="text-sm text-gray-600">${certType.toUpperCase()} Certificate</p>
+                                    <p class="text-xs text-gray-500">Official Examination Certificate</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 text-center">
+                                Issued by Kenya National Examinations Council
+                            </p>
+                        </div>
+                        
+                        <!-- Actions -->
+                        <div class="space-y-3">
+                            <button onclick="downloadPDF('${certType.toUpperCase()}.pdf')" 
+                                    class="w-full btn btn-primary py-3 rounded-lg font-medium flex items-center justify-center gap-2">
+                                <i data-feather="download" class="w-5 h-5"></i>
+                                Download Certificate (PDF)
+                            </button>
+                            <button onclick="shareCertificate('${certType}')" 
+                                    class="w-full btn btn-secondary py-3 rounded-lg font-medium flex items-center justify-center gap-2">
+                                <i data-feather="share" class="w-5 h-5"></i>
+                                Share Achievement
+                            </button>
+                        </div>
+                        
+                        <!-- Verification -->
+                        <div class="bg-gray-50 rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-feather="shield" class="w-4 h-4 text-green-600"></i>
+                                <h6 class="font-medium text-dark text-sm">Official Verification</h6>
+                            </div>
+                            <p class="text-xs text-gray-600">
+                                This certificate is verified and issued by the Kenya National Examinations Council. 
+                                For official verification, please contact KNEC directly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="border-t border-gray-200 p-4 bg-gray-50">
+                <div class="flex justify-between items-center">
+                    <p class="text-xs text-gray-500">
+                        <i data-feather="calendar" class="w-3 h-3 inline mr-1"></i>
+                        Last updated: ${new Date().toLocaleDateString()}
+                    </p>
+                    <div class="flex gap-2">
+                        <button onclick="this.closest('.certificate-modal').remove()" 
+                                class="px-4 py-2 text-gray-600 hover:text-gray-800 text-sm font-medium">
+                            Close
+                        </button>
+                        <button onclick="printCertificate('${certType}')" 
+                                class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 flex items-center gap-2">
+                            <i data-feather="printer" class="w-4 h-4"></i>
+                            Print
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    feather.replace();
+}
+
+// Download PDF function
+function downloadPDF(filename) {
+    // Create a temporary link to trigger download
+    const link = document.createElement('a');
+    link.href = filename;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show notification
+    showNotification(`Downloading ${filename}...`, 'success');
+}
+
+// Share certificate function
+function shareCertificate(certType) {
+    const certName = certType === 'kcse' ? 'KCSE Certificate' : 'KCPE Certificate';
+    const message = `Check out my ${certName} achievement!`;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: `${certName} - Joel Wanyoa Khamala`,
+            text: message,
+            url: window.location.href,
+        })
+        .then(() => showNotification('Achievement shared successfully!', 'success'))
+        .catch(() => showNotification('Sharing cancelled', 'info'));
+    } else {
+        // Fallback: Copy to clipboard
+        navigator.clipboard.writeText(`${message}\n${window.location.href}`)
+            .then(() => showNotification('Link copied to clipboard!', 'success'))
+            .catch(() => showNotification('Failed to share. Please copy manually.', 'error'));
+    }
+}
+
+// Print certificate function
+function printCertificate(certType) {
+    const certTitle = certType === 'kcse' ? 'KCSE Certificate' : 'KCPE Certificate';
+    const printContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>${certTitle} - Joel Wanyoa Khamala</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .header { text-align: center; margin-bottom: 30px; }
+                .certificate-details { background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+                .subject-list { margin-top: 20px; }
+                .subject { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+                .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #666; }
+                @media print {
+                    .no-print { display: none; }
+                    body { margin: 0; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h1>${certTitle}</h1>
+                <h2>Joel Wanyoa Khamala</h2>
+            </div>
+            
+            <div class="certificate-details">
+                <p><strong>Generated:</strong> ${new Date().toLocaleString()}</p>
+                <p><strong>From Portfolio:</strong> ${window.location.href}</p>
+            </div>
+            
+            <p>This is a summary of my ${certType.toUpperCase()} certificate details.</p>
+            
+            <div class="footer">
+                <p>For official verification, please refer to the original certificate.</p>
+                <p>© ${new Date().getFullYear()} Joel Wanyoa Khamala - All Rights Reserved</p>
+            </div>
+            
+            <div class="no-print" style="margin-top: 50px; text-align: center;">
+                <button onclick="window.close()" style="padding: 10px 20px; background: #4F46E5; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    Close Window
+                </button>
+            </div>
+        </body>
+        </html>
+    `;
+    
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(printContent);
+    printWindow.document.close();
+    printWindow.focus();
+    
+    setTimeout(() => {
+        printWindow.print();
+    }, 500);
+}
+
+// Add certificate CSS animations if not present
+if (!document.querySelector('#certificate-css')) {
+    const style = document.createElement('style');
+    style.id = 'certificate-css';
+    style.textContent = `
+        .certificate-modal {
+            z-index: 10000;
+        }
+        
+        .certificate-modal .animate-scale-in {
+            animation: scale-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        /* Grade badges */
+        .grade-badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .grade-a { background-color: rgba(16, 185, 129, 0.1); color: #10B981; }
+        .grade-bplus { background-color: rgba(59, 130, 246, 0.1); color: #3B82F6; }
+        .grade-b { background-color: rgba(99, 102, 241, 0.1); color: #6366F1; }
+        
+        /* Certificate preview hover effect */
+        .cert-preview:hover {
+            transform: translateY(-2px);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Print styles */
+        @media print {
+            .certificate-modal {
+                position: static;
+                background: white;
+            }
+            
+            .certificate-modal > div {
+                box-shadow: none;
+                border: none;
+                max-height: none;
+            }
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 // Add CSS animations to your existing style tag
