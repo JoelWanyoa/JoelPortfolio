@@ -1,0 +1,671 @@
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Theme tokens */
+:root {
+    --bg: #F8FAFC;
+    --surface: rgba(255, 255, 255, 0.78);
+    --text: #0F172A;
+    --muted: #475569;
+    --border: rgba(15, 23, 42, 0.10);
+    --shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    --shadow-sm: 0 8px 20px rgba(15, 23, 42, 0.10);
+    --ring: rgba(79, 70, 229, 0.35);
+    --radius: 14px;
+}
+
+body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--text);
+    background: radial-gradient(1200px 700px at 10% 10%, rgba(79, 70, 229, 0.10), transparent 60%),
+                radial-gradient(900px 520px at 90% 15%, rgba(16, 185, 129, 0.10), transparent 55%),
+                var(--bg);
+    overflow-x: hidden;
+}
+
+/* Ensure proper spacing for fixed navbar */
+section:first-of-type {
+    scroll-margin-top: 80px;
+}
+
+::selection {
+    background: rgba(79, 70, 229, 0.18);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4F46E5;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4338CA;
+}
+
+/* Animation classes */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar Styles */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.nav-link:hover {
+    color: var(--text);
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.nav-link.active {
+    color: #4F46E5;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: #4F46E5;
+    border-radius: 1px;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    color: var(--muted);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: #4F46E5;
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.mobile-nav-link.active {
+    color: #4F46E5;
+    background: rgba(79, 70, 229, 0.08);
+    font-weight: 600;
+}
+
+/* Footer Styles */
+.footer-social-link {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.footer-social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.footer-link {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+    padding: 0.25rem 0;
+}
+
+.footer-link:hover {
+    color: white;
+    padding-left: 4px;
+}
+
+/* Modal Animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Certification Items */
+.certification-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #4F46E5;
+}
+
+.certification-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.certification-item:hover::after {
+    left: 100%;
+}
+
+/* Modal Styles */
+#certification-modal {
+    z-index: 9999;
+}
+
+#certification-modal .modal-content {
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+/* Dark theme modal styles */
+.dark #certification-modal .bg-white {
+    background-color: #1E293B !important;
+    color: #F1F5F9 !important;
+}
+
+.dark #certification-modal .text-dark {
+    color: #F1F5F9 !important;
+}
+
+.dark #certification-modal .text-gray-600 {
+    color: #94A3B8 !important;
+}
+
+.dark #certification-modal .border-gray-200 {
+    border-color: #475569 !important;
+}
+
+.dark #certification-modal .bg-primary {
+    background-color: rgba(79, 70, 229, 0.2) !important;
+}
+
+
+/* Projects Section Enhancements */
+.project-card-hover {
+    transition: all 0.3s ease;
+}
+
+.project-card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+}
+
+/* Gradient text for statistics */
+.gradient-text {
+    background: linear-gradient(135deg, #4F46E5 0%, #10B981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Shimmer effect for project images */
+.project-image-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    transform: rotate(30deg);
+    transition: transform 0.6s;
+}
+
+.project-image-shimmer:hover::after {
+    transform: rotate(30deg) translateX(100%);
+}
+
+/* Custom scrollbar for project descriptions */
+.project-description {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.project-description::-webkit-scrollbar {
+    width: 4px;
+}
+
+.project-description::-webkit-scrollbar-track {
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: 2px;
+}
+
+.project-description::-webkit-scrollbar-thumb {
+    background: #4F46E5;
+    border-radius: 2px;
+}
+
+/* Animation for project cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-featured {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Dark mode support for projects */
+.dark .project-card {
+    background-color: #1E293B !important;
+    border-color: #374151 !important;
+}
+
+.dark .project-card h3,
+.dark .project-card h4 {
+    color: #F1F5F9 !important;
+}
+
+.dark .project-card p {
+    color: #94A3B8 !important;
+}
+
+.dark .project-card .bg-gray-100 {
+    background-color: #374151 !important;
+    color: #CBD5E1 !important;
+}
+
+.dark .project-stats-item {
+    background-color: rgba(30, 41, 59, 0.7) !important;
+}
+
+/* Hover tooltip for quick view */
+.certification-item .tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1E293B;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.certification-item .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px;
+    border-style: solid;
+    border-color: #1E293B transparent transparent transparent;
+}
+
+.certification-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 8px);
+}
+
+/* Responsive modal */
+@media (max-width: 640px) {
+    #certification-modal .modal-content {
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+}
+
+/* Certification grid improvements */
+.certifications-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .certifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Dark theme styles */
+.dark body {
+    --bg: #0F172A;
+    --surface: rgba(30, 41, 59, 0.9);
+    --text: #F1F5F9;
+    --muted: #94A3B8;
+    --border: rgba(255, 255, 255, 0.1);
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background: radial-gradient(1200px 700px at 10% 10%, rgba(79, 70, 229, 0.15), transparent 60%),
+                radial-gradient(900px 520px at 90% 15%, rgba(16, 185, 129, 0.15), transparent 55%),
+                var(--bg) !important;
+}
+
+.dark nav {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .btn-secondary {
+    background: rgba(30, 41, 59, 0.85);
+    color: #F1F5F9;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .btn-secondary:hover {
+    background: rgba(30, 41, 59, 0.95);
+}
+
+.dark .icon-link {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark section.bg-white {
+    background-color: #1E293B !important;
+}
+
+.dark section.bg-gray-50 {
+    background-color: #0F172A !important;
+}
+
+.dark .bg-gray-50 {
+    background-color: #1E293B !important;
+}
+
+.dark .text-gray-600 {
+    color: #94A3B8 !important;
+}
+
+.dark .text-gray-700 {
+    color: #CBD5E1 !important;
+}
+
+.dark .border-gray-300 {
+    border-color: #475569 !important;
+}
+
+/* Mobile menu dark theme */
+.dark #mobile-menu {
+    background: #1E293B !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .mobile-nav-link {
+    color: #94A3B8;
+}
+
+.dark .mobile-nav-link:hover,
+.dark .mobile-nav-link.active {
+    color: #4F46E5;
+    background: rgba(79, 70, 229, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-link {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .footer-social-link {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Animation for navbar on scroll */
+nav {
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Section transitions */
+section {
+    transition: all 0.3s ease;
+}
+
+/* Reusable buttons (used in index.html) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+    box-shadow: var(--shadow-sm);
+    will-change: transform;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn-primary {
+    background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%);
+    color: white;
+    box-shadow: 0 14px 30px rgba(79, 70, 229, 0.22);
+}
+.btn-primary:hover { box-shadow: 0 18px 36px rgba(79, 70, 229, 0.26); }
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.85);
+    color: #0F172A;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+}
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.95); }
+
+/* Social icon links */
+.icon-link {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border);
+    color: rgba(15, 23, 42, 0.60);
+    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    backdrop-filter: blur(10px);
+}
+.icon-link:hover {
+    transform: translateY(-2px);
+    color: #4F46E5;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.btn-hover-effect:hover {
+    transform: translateY(-3px);
+}
+
+/* Custom underline effect for headings */
+.heading-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.heading-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: #4F46E5;
+    border-radius: 2px;
+}
+
+/* Project card hover effect */
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Skill bar animation */
+.skill-bar {
+    transition: width 1s ease-in-out;
+}
+
+/* Accessibility focus styles */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid #4F46E5;
+    outline-offset: 2px;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+    .btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .icon-link {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Better form inputs on mobile */
+input, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+}
+
+@media (min-width: 640px) {
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: inherit;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+        scroll-behavior: auto !important;
+    }
+}

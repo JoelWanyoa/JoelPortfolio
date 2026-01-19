@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joel Wanyoa Khamala | Software Developer & ICT Trainer</title>
+    <meta name="description" content="Software Developer with Bachelor's in Computer Science and Diploma in Technical Trainer Education. 4+ years training experience and 3+ years in software development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <custom-navbar></custom-navbar>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 pt-24 sm:pt-28 bg-gradient-to-br from-primary/5 via-white to-primary/10">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div class="space-y-5 sm:space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/70 px-3 py-1 text-xs sm:text-sm text-gray-700 shadow-sm backdrop-blur">
+                    <span class="inline-block h-2 w-2 rounded-full bg-secondary"></span>
+                    <span class="hidden sm:inline">Available for opportunities • 2026</span>
+                    <span class="sm:hidden">Available • 2026</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold text-dark leading-tight">
+                    <span class="text-primary">Software Developer</span> & ICT Trainer
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-lg mx-auto md:mx-0">
+                    Bachelor's in Computer Science | Diploma in Technical Trainer Education | 4+ years training experience | 3+ years software development
+                </p>
+                <div class="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
+                    <a href="#projects" class="btn btn-primary text-sm sm:text-base">
+                        View My Work
+                    </a>
+                    <a href="Joel Wanyoa Khamala CV 2026.pdf" download class="btn btn-secondary text-sm sm:text-base">
+                        Download CV
+                    </a>
+                </div>
+                <div class="flex gap-3 sm:gap-4 pt-4 justify-center md:justify-start">
+                    <a href="#" class="icon-link" aria-label="GitHub">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="icon-link" aria-label="LinkedIn">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="#" class="icon-link" aria-label="Twitter">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="mailto:joelwanyoakhamala@gmail.com" class="icon-link" aria-label="Email">
+                        <i data-feather="mail"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="relative order-first md:order-last">
+                <div class="relative z-10 w-full max-w-xs sm:max-w-sm aspect-square rounded-2xl overflow-hidden shadow-2xl mx-auto">
+                    <!-- You can replace this with your actual photo -->
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Joel Wanyoa Khamala" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 bg-secondary rounded-2xl opacity-20 -z-10"></div>
+                <div class="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-20 h-20 sm:w-24 sm:h-24 bg-primary rounded-full opacity-20 -z-10"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 sm:py-16 lg:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark mb-3 sm:mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
+                <div class="space-y-5 sm:space-y-6">
+                    <h3 class="text-xl sm:text-2xl font-bold text-dark">Hello, I'm Joel Wanyoa Khamala</h3>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        Software Developer with a Bachelor's Degree in Computer Science and a Diploma in Technical Training Education (Pedagogy). 
+                        I have over 4 years of experience training students and 3 years leading teams in software development for startups 
+                        in the USA and Kenya.
+                    </p>
+                    <p class="text-sm sm:text-base text-gray-600">
+                        Seeking to leverage my skills in computing and technology to contribute to national and community development. 
+                        My personal objective is to use my achievements to serve my nation and promote unity through technological empowerment.
+                    </p>
+                    
+                    <div class="pt-2 sm:pt-4">
+                        <h4 class="text-base sm:text-lg font-semibold text-dark mb-3">Education</h4>
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex gap-3 sm:gap-4">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                    <i data-feather="book"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-dark text-sm sm:text-base">Bachelor of Science in Computer Science</h5>
+                                    <p class="text-gray-500 text-xs sm:text-sm">Laikipia University • 2014-2018</p>
+                                    <p class="text-gray-500 text-xs mt-1">Key Courses: Programming, AI, Cryptography, Web Development, Software Engineering, Databases, Computer Networks</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 sm:gap-4">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                    <i data-feather="award"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-dark text-sm sm:text-base">Diploma in Technical Trainer's Education (Pedagogy)</h5>
+                                    <p class="text-gray-500 text-xs sm:text-sm">Kenya Technical Trainers College • 2020</p>
+                                    <p class="text-gray-500 text-xs mt-1">Key Courses: Training Methods, Web Programming, Mobile Programming, Assessment & Evaluation, Educational Psychology, ICT Integration</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-5 sm:space-y-6">
+                    <h4 class="text-base sm:text-lg font-semibold text-dark">Professional Highlights</h4>
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="p-4 sm:p-5 bg-gray-50 rounded-lg">
+                            <div class="flex items-center gap-2 sm:gap-3 mb-2">
+                                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-secondary rounded-full flex-shrink-0"></div>
+                                <h5 class="font-medium text-dark text-sm sm:text-base">Lead Software Developer</h5>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded">2020-Present</span>
+                            </div>
+                            <p class="text-gray-600 text-xs sm:text-sm">
+                                Lenity Management Group, Florida, USA | Led development of online platform architecture, designed UI/UX, 
+                                created servers, ensured system responsiveness, conducted testing and troubleshooting.
+                            </p>
+                        </div>
+                        <div class="p-4 sm:p-5 bg-gray-50 rounded-lg">
+                            <div class="flex items-center gap-2 sm:gap-3 mb-2">
+                                <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-secondary rounded-full flex-shrink-0"></div>
+                                <h5 class="font-medium text-dark text-sm sm:text-base">ICT Trainer & Developer</h5>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded">2019-2024</span>
+                            </div>
+                            <p class="text-gray-600 text-xs sm:text-sm">
+                                Michuki TTI & Kisiva TTI | Delivered ICT training, developed curricula, and worked on various software 
+                                development projects using modern technologies.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-base sm:text-lg font-semibold text-dark pt-2 sm:pt-4">Key Skills</h4>
+                    <div class="flex flex-wrap gap-2 sm:gap-3">
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">VueJS/ReactJS</span>
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">Laravel/PHP</span>
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">JavaScript</span>
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">HTML/CSS</span>
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">SQL/MySQL</span>
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">Java</span>
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">DevOps</span>
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">UI/UX Design</span>
+                        <span class="px-2.5 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">ICT Training</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark mb-3 sm:mb-4">Work Experience</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="space-y-6 sm:space-y-8">
+                <!-- Current Role -->
+                <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold text-dark">PSC Intern - ICT Section</h3>
+                            <p class="text-primary font-medium text-sm sm:text-base">State Department for Performance and Delivery Management</p>
+                        </div>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary mt-2 sm:mt-0">
+                            April 2024 - April 2025
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-600 list-disc list-inside">
+                        <li>Performed system backups, server builds, and recovery</li>
+                        <li>Monitored software and servers</li>
+                        <li>Provided user support and training</li>
+                        <li>Assisted in systems implementation and documentation</li>
+                        <li>Conducted safety checks and advised on IT upgrades</li>
+                        <li>Supported Kenya Vision 2030 Delivery Secretariat</li>
+                    </ul>
+                </div>
+
+                <!-- Previous Roles -->
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <h4 class="font-bold text-dark mb-2">ICT Trainer</h4>
+                        <p class="text-primary text-sm mb-3">Michuki Technical Training Institute</p>
+                        <p class="text-xs text-gray-500 mb-3">May 2023 - April 2024</p>
+                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
+                            <li>• Delivered lectures and practical sessions</li>
+                            <li>• Assessed student progress</li>
+                            <li>• Updated teaching materials</li>
+                            <li>• Additional roles: Guidance & Counseling, Class Trainer</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <h4 class="font-bold text-dark mb-2">Software Development Intern</h4>
+                        <p class="text-primary text-sm mb-3">Xtranet Communications, Nairobi</p>
+                        <p class="text-xs text-gray-500 mb-3">Dec 2022 - Feb 2023</p>
+                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
+                            <li>• Developed software solutions with ReactJS and NextJS</li>
+                            <li>• Collaborated on technology integration</li>
+                            <li>• Assisted in implementation projects</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <h4 class="font-bold text-dark mb-2">Software Development Intern (Laravel)</h4>
+                        <p class="text-primary text-sm mb-3">Kweli Capital Ltd, Nairobi</p>
+                        <p class="text-xs text-gray-500 mb-3">July 2022 - Sept 2022</p>
+                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
+                            <li>• Created and maintained software systems</li>
+                            <li>• Updated tech blogs</li>
+                            <li>• Implemented VueJS-based solutions</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <h4 class="font-bold text-dark mb-2">TVET Trainer</h4>
+                        <p class="text-primary text-sm mb-3">Kisiva Technical Training Institute</p>
+                        <p class="text-xs text-gray-500 mb-3">2019 - 2022</p>
+                        <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
+                            <li>• Trained ICT subjects</li>
+                            <li>• Developed and evaluated training content</li>
+                            <li>• Mobile training delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-12 sm:py-16 lg:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark mb-3 sm:mb-4">Technical Skills</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-xl">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3 sm:mb-4">
+                        <i data-feather="code"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-dark mb-3 sm:mb-4">Frontend Development</h3>
+                    <div class="space-y-3 sm:space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>ReactJS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>VueJS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-xl">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3 sm:mb-4">
+                        <i data-feather="server"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-dark mb-3 sm:mb-4">Backend & Databases</h3>
+                    <div class="space-y-3 sm:space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>PHP/Laravel</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>Java</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>SQL/MySQL</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>DevOps</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Skills -->
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-xl sm:col-span-2 lg:col-span-1">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3 sm:mb-4">
+                        <i data-feather="users"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-dark mb-3 sm:mb-4">Professional Skills</h3>
+                    <div class="space-y-3 sm:space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>ICT Training & Pedagogy</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>UI/UX Design</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>Project Management</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-1">
+                                <span>Communication Skills</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                                <div class="bg-primary h-1.5 sm:h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+            <div class="inline-flex items-center gap-2 mb-4">
+                <div class="w-3 h-3 bg-primary rounded-full"></div>
+                <span class="text-sm font-medium text-primary uppercase tracking-wider">Portfolio</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-dark mb-4">
+                Featured <span class="text-primary">Projects</span>
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Showcasing my journey in creating impactful digital solutions that blend technology with user-centered design.
+            </p>
+        </div>
+        
+        <div class="relative">
+            <!-- Project 1 - Highlighted -->
+            <div class="mb-16 lg:mb-20">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="inline-flex items-center gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">Featured Project</span>
+                            <span class="text-xs text-gray-500">2024</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-dark mb-4">Laikipia Hostel Platform</h3>
+                        <p class="text-gray-600 mb-6">
+                            A comprehensive hostel management platform with real-time booking, payment integration, 
+                            and administrative dashboard. Built to streamline operations and enhance user experience 
+                            for both guests and management.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1.5 bg-gradient-to-r from-primary/10 to-primary/5 text-primary rounded-lg text-sm font-medium">HTML5/CSS3</span>
+                            <span class="px-3 py-1.5 bg-gradient-to-r from-primary/10 to-primary/5 text-primary rounded-lg text-sm font-medium">JavaScript</span>
+                            <span class="px-3 py-1.5 bg-gradient-to-r from-primary/10 to-primary/5 text-primary rounded-lg text-sm font-medium">Payment Gateway</span>
+                            <span class="px-3 py-1.5 bg-gradient-to-r from-primary/10 to-primary/5 text-primary rounded-lg text-sm font-medium">Responsive Design</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="http://www.laikipiahostel.com" target="_blank" class="btn btn-primary flex items-center gap-2">
+                                <i data-feather="external-link" class="w-4 h-4"></i>
+                                Visit Live Site
+                            </a>
+                            <a href="#" class="btn btn-secondary flex items-center gap-2">
+                                <i data-feather="github" class="w-4 h-4"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 relative">
+                        <div class="relative group cursor-pointer">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
+                            <div class="relative rounded-xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
+                                <div class="aspect-video bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i data-feather="home" class="w-20 h-20 text-white/80"></i>
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                                        <span class="text-sm font-medium">Live • Hosting 100+ guests monthly</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid grid-cols-3 gap-4">
+                            <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                                <div class="text-2xl font-bold text-primary">40%</div>
+                                <div class="text-xs text-gray-600">Booking Increase</div>
+                            </div>
+                            <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                                <div class="text-2xl font-bold text-primary">95%</div>
+                                <div class="text-xs text-gray-600">User Satisfaction</div>
+                            </div>
+                            <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                                <div class="text-2xl font-bold text-primary">24/7</div>
+                                <div class="text-xs text-gray-600">Uptime</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="mb-16 lg:mb-20">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="relative">
+                        <div class="relative group cursor-pointer">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-secondary to-primary rounded-2xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
+                            <div class="relative rounded-xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
+                                <div class="aspect-video bg-gradient-to-br from-secondary to-primary relative overflow-hidden">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i data-feather="layers" class="w-20 h-20 text-white/80"></i>
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <span class="px-3 py-1 bg-black/70 backdrop-blur-sm text-white rounded-full text-xs font-medium">Enterprise Solution</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="inline-flex items-center gap-2 mb-4">
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-medium">Team Project</span>
+                            <span class="text-xs text-gray-500">2023</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-dark mb-4">Enterprise Management Platform</h3>
+                        <p class="text-gray-600 mb-6">
+                            Full-stack enterprise solution with React frontend and Node.js backend. Features include 
+                            real-time analytics, user management, and automated reporting systems designed for scalability.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1.5 bg-gradient-to-r from-secondary/10 to-secondary/5 text-secondary rounded-lg text-sm font-medium">React.js</span>
+                            <span class="px-3 py-1.5 bg-gradient-to-r from-secondary/10 to-secondary/5 text-secondary rounded-lg text-sm font-medium">Node.js</span>
+                            <span class="px-3 py-1.5 bg-gradient-to-r from-secondary/10 to-secondary/5 text-secondary rounded-lg text-sm font-medium">MongoDB</span>
+                            <span class="px-3 py-1.5 bg-gradient-to-r from-secondary/10 to-secondary/5 text-secondary rounded-lg text-sm font-medium">REST API</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="btn btn-primary flex items-center gap-2">
+                                <i data-feather="play" class="w-4 h-4"></i>
+                                View Demo
+                            </a>
+                            <a href="#" class="btn btn-secondary flex items-center gap-2">
+                                <i data-feather="github" class="w-4 h-4"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Projects Grid -->
+            <div class="mb-12">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-xl sm:text-2xl font-bold text-dark">More Specializations</h3>
+                    <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center gap-2">
+                        View All Projects
+                        <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project Card 1 -->
+                    <div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary/20">
+                        <div class="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i data-feather="smartphone" class="w-16 h-16 text-primary/60 group-hover:text-primary transition-colors"></i>
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-2 py-1 bg-white/90 backdrop-blur-sm rounded text-xs font-medium">Mobile</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-dark mb-2 group-hover:text-primary transition-colors">E-Learning Platform</h4>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Mobile-first learning platform for technical institutions with interactive courses.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Vue.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Laravel</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">MySQL</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1">
+                                    View Details
+                                    <i data-feather="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                                <span class="text-xs text-gray-500">2022</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary/20">
+                        <div class="h-48 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i data-feather="shield" class="w-16 h-16 text-secondary/60 group-hover:text-secondary transition-colors"></i>
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-2 py-1 bg-white/90 backdrop-blur-sm rounded text-xs font-medium">Education</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-dark mb-2 group-hover:text-secondary transition-colors">CyberSecurity Training</h4>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Interactive cybersecurity modules with practical exercises and assessments.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">HTML5</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">JavaScript</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Bootstrap</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-secondary hover:text-secondary/80 text-sm font-medium flex items-center gap-1">
+                                    View Details
+                                    <i data-feather="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                                <span class="text-xs text-gray-500">2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary/20">
+                        <div class="h-48 bg-gradient-to-br from-primary/20 to-purple-500/20 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i data-feather="bar-chart-2" class="w-16 h-16 text-purple-500/60 group-hover:text-purple-500 transition-colors"></i>
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-2 py-1 bg-white/90 backdrop-blur-sm rounded text-xs font-medium">Analytics</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-dark mb-2 group-hover:text-purple-500 transition-colors">Data Dashboard</h4>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Real-time analytics dashboard with interactive visualizations and reporting.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Chart.js</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Firebase</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-purple-500 hover:text-purple-500/80 text-sm font-medium flex items-center gap-1">
+                                    View Details
+                                    <i data-feather="arrow-right" class="w-3 h-3"></i>
+                                </a>
+                                <span class="text-xs text-gray-500">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Statistics -->
+            <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-6 sm:p-8 mb-12">
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">15+</div>
+                        <div class="text-gray-600">Projects Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-secondary mb-2">4+</div>
+                        <div class="text-gray-600">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">8+</div>
+                        <div class="text-gray-600">Technologies Used</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl font-bold text-secondary mb-2">100%</div>
+                        <div class="text-gray-600">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+                <div class="inline-block bg-gradient-to-r from-primary to-secondary rounded-2xl p-1 mb-8">
+                    <div class="bg-white rounded-xl p-8 sm:p-10">
+                        <h3 class="text-2xl sm:text-3xl font-bold text-dark mb-4">Have a project in mind?</h3>
+                        <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                            I'm always open to discussing new opportunities and innovative ideas. Let's create something amazing together.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="#contact" class="btn btn-primary px-8 py-3 text-base">
+                                <i data-feather="message-circle" class="w-5 h-5 mr-2"></i>
+                                Start a Conversation
+                            </a>
+                            <a href="Joel Wanyoa Khamala CV 2026.pdf" download class="btn btn-secondary px-8 py-3 text-base">
+                                <i data-feather="download" class="w-5 h-5 mr-2"></i>
+                                Download CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Certifications Section -->
+<section id="certifications" class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark mb-3 sm:mb-4">Certifications & Training</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Click on any certification to view detailed information</p>
+        </div>
+        
+        <div class="certifications-grid">
+            <!-- Data Protection -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="data-protection">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">Data Protection Certificate</h4>
+                        <p class="text-xs text-gray-500">Office of the Data Protection Commissioner</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2024</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">Comprehensive training on data protection laws and compliance requirements.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Data Privacy</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Compliance</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+
+            <!-- Cyber Security -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="cyber-security">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">Cyber Security Training</h4>
+                        <p class="text-xs text-gray-500">Ministry of ICT</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2024</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">Advanced cybersecurity focusing on threat detection and prevention.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Network Security</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Threat Analysis</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+
+            <!-- NADPA Conference -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="nadpa">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">NADPA Conference</h4>
+                        <p class="text-xs text-gray-500">Windsor Hotel</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2024</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">National Data Protection Annual Conference participation.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Data Governance</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Privacy Laws</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+
+            <!-- Assessment Training -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="assessment">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">Assessment & Evaluation Training</h4>
+                        <p class="text-xs text-gray-500">TVET CDACC</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2023</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">Competency-based assessment methodologies for TVET.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Assessment Design</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Evaluation Methods</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+
+            <!-- Counseling Training -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="counseling">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">Guidance & Counseling Training</h4>
+                        <p class="text-xs text-gray-500">Michuki TTI</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2023</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">Student counseling techniques and mentorship training.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Student Counseling</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Mentorship</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+
+            <!-- Commonwealth Training -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="commonwealth">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">Multiple Online Trainings</h4>
+                        <p class="text-xs text-gray-500">Commonwealth of Learning</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2022</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">Professional development in e-learning and digital literacy.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">E-Learning</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Instructional Design</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+
+            <!-- Google Developers -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="google-developers">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">Google Developers ToT Training</h4>
+                        <p class="text-xs text-gray-500">Google</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2022</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">Train-the-Trainer program on Google technologies.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Android Development</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Google APIs</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+
+            <!-- Emerging Markets -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="emerging-markets">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">Emerging Markets Skills Initiative</h4>
+                        <p class="text-xs text-gray-500">ACWICT</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2021</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">Digital skills training for emerging markets.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Digital Skills</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Web Development</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+
+            <!-- ODEL Training -->
+            <div class="certification-item bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary transition-all cursor-pointer group relative" data-cert-id="odel">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-dark mb-1 group-hover:text-primary transition-colors">ODEL Training for TVET</h4>
+                        <p class="text-xs text-gray-500">CDACC</p>
+                    </div>
+                    <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">2020</span>
+                </div>
+                <p class="text-xs text-gray-600 mb-3 line-clamp-2">Open, Distance, and E-Learning methodologies training.</p>
+                <div class="flex flex-wrap gap-1">
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Online Learning</span>
+                    <span class="px-2 py-0.5 bg-primary/10 text-primary rounded text-xs">Course Design</span>
+                </div>
+                <div class="tooltip">Click to view details</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark mb-3 sm:mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">Send me a message</h3>
+                    <form class="space-y-4 sm:space-y-6" id="contact-form">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition text-sm sm:text-base" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition text-sm sm:text-base" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition text-sm sm:text-base resize-y" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-5 sm:px-6 py-2.5 sm:py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-sm sm:text-base">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="space-y-6 sm:space-y-8">
+                    <h3 class="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">Contact Information</h3>
+                    <div class="space-y-4 sm:space-y-6">
+                        <div class="flex items-start sm:items-center gap-3 sm:gap-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                <i data-feather="mail"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-500 text-sm sm:text-base">Email</h4>
+                                <a href="mailto:joelwanyoakhamala@gmail.com" class="text-dark hover:text-primary transition-colors text-sm sm:text-base break-all">joelwanyoakhamala@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start sm:items-center gap-3 sm:gap-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                <i data-feather="phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-500 text-sm sm:text-base">Phone</h4>
+                                <a href="tel:+254700000000" class="text-dark hover:text-primary transition-colors text-sm sm:text-base">+254 700 000 000</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start sm:items-center gap-3 sm:gap-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                                <i data-feather="map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-500 text-sm sm:text-base">Location</h4>
+                                <p class="text-dark text-sm sm:text-base">Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-2 sm:pt-4">
+                        <h4 class="font-medium text-gray-500 mb-2 sm:mb-3 text-sm sm:text-base">Connect with me</h4>
+                        <div class="flex flex-wrap gap-3 sm:gap-4">
+                            <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 hover:bg-primary/10 rounded-full flex items-center justify-center text-gray-600 hover:text-primary transition-colors" aria-label="GitHub">
+                                <i data-feather="github"></i>
+                            </a>
+                            <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 hover:bg-primary/10 rounded-full flex items-center justify-center text-gray-600 hover:text-primary transition-colors" aria-label="LinkedIn">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 hover:bg-primary/10 rounded-full flex items-center justify-center text-gray-600 hover:text-primary transition-colors" aria-label="Twitter">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 hover:bg-primary/10 rounded-full flex items-center justify-center text-gray-600 hover:text-primary transition-colors" aria-label="Download CV">
+                                <i data-feather="download"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary/5 p-4 rounded-lg mt-4">
+                        <h4 class="font-medium text-dark mb-2 text-sm sm:text-base">References Available</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">
+                            Professional references from State Department for Performance and Delivery Management, 
+                            Michuki Technical Training Institute, and Kisiwa Technical Training Institute available upon request.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // In a real application, you would send this to a server
+            console.log('Contact form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your message, Joel! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
