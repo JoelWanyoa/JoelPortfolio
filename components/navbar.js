@@ -15,7 +15,7 @@ class CustomNavbar extends HTMLElement {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                                 </svg>
                             </div>
-                            <span class="text-xl sm:text-2xl font-bold text-dark dark:text-white group-hover:text-primary transition-colors">JoelWanyoa<span class="text-primary">.</span></span>
+                            <span class="text-xl sm:text-2xl font-bold text-dark dark:text-white group-hover:text-primary transition-colors">JoelKhamala<span class="text-primary">.</span></span>
                         </a>
   
                         <!-- Desktop Navigation -->
